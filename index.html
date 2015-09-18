@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Angular collapsible block demo</title>
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.5/angular.js"></script>
+  <!-- Optional: include ng-animate for some extra sugar -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.5/angular-animate.js"></script>
+
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+  <link href="dist/ng-collapsible-block.css" rel="stylesheet" type="text/css" />
+  <!-- Optional: include font-awesome to display an icon next to the collapsible block title -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+  <!-- Just some body style to space things up -->
+  <style>
+    body{
+      padding:120px 60px;
+
+      /* So much gradient, check out -> http://uigradients.com */
+      background: -webkit-linear-gradient(90deg, #ECE9E6 10%, #FFFFFF 90%); /* Chrome 10+, Saf5.1+ */
+      background:    -moz-linear-gradient(90deg, #ECE9E6 10%, #FFFFFF 90%); /* FF3.6+ */
+      background:     -ms-linear-gradient(90deg, #ECE9E6 10%, #FFFFFF 90%); /* IE10 */
+      background:      -o-linear-gradient(90deg, #ECE9E6 10%, #FFFFFF 90%); /* Opera 11.10+ */
+      background:         linear-gradient(90deg, #ECE9E6 10%, #FFFFFF 90%); /* W3C */
+    }
+  </style>
+</head>
+  <body class="clearfix" ng-app="app" ng-controller="ctrl">
+    <article class="col-xs-12 col-md-3">
+      <!-- dummy content -->
+      <div class="form-group">
+        <label for="exampleInputName">Name</label>
+        <input type="text" class="form-control" id="exampleInputName" placeholder="Name">
+      </div>
+      <!-- end dummy content -->
+
+      <!-- directive usage -->
+      <collapsible collapsible-title="{{title1}}" collapsed-icon="fa fa-chevron-down" expanded-icon="fa fa-chevron-up">
+        <section>
+          <div class="form-group">
+            <label for="exampleInputColor">Shoe color</label>
+            <input type="color" class="form-control" id="exampleInputColor" placeholder="Shoe color">
+            <p class="help-block">Some things don't need to be shown right away.</p>
+          </div>
+        </section>
+      </collapsible>
+      <!-- end directive usage -->
+
+      <!-- more dummy content -->
+      <div class="form-group">
+        <label for="exampleInputEmail">Email address</label>
+        <input type="email" class="form-control" id="exampleInputEmail" placeholder="Email">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword">Password</label>
+        <input type="password" class="form-control" id="exampleInputPassword" placeholder="Password">
+      </div>
+      <!-- end dummy content -->
+
+      <!-- directive usage (again) -->
+      <collapsible collapsible-title="{{title2}}" collapsed-icon="fa fa-chevron-down" expanded-icon="fa fa-chevron-up">
+        <section class="form-inline">
+          <div class="form-group">
+            <label class="sr-only" for="exampleInputAmount">Amount (in dollars)</label>
+            <div class="input-group">
+              <div class="input-group-addon">$</div>
+              <input type="text" class="form-control" id="exampleInputAmount" placeholder="Amount">
+              <div class="input-group-addon">.00</div>
+            </div>
+            <p class="help-block">Thanks for the help!</p>
+          </div>
+        </section>
+      </collapsible>
+      <!-- end directive usage -->
+    </article>
+
+
+    <!-- Local JS -->
+    <script src="dist/ng-collapsible-block.js"></script>
+    <script>
+      angular
+        .module('app', ['ngAnimate', 'dm.collapsibleBlock'])
+        .controller('ctrl', ['$scope', function($scope){
+          $scope.title1 = "Advanced input";
+          $scope.title2 = "Help charity!"
+        }]);
+    </script>
+  </body>
+</html>
