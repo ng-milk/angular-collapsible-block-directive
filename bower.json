@@ -1,11 +1,11 @@
 {
   "name": "angular-collapsible-block-directive",
-  "version": "0.0.2",
+  "version": "0.0.1",
   "homepage": "https://github.com/ng-milk/angular-collapsible-block-directive",
   "authors": [
     "Dan Mindru <mindrudan@gmail.com>"
   ],
-  "description": "A directive that uses ng-transclude to create collapsible blocks. Read more about it on [UPDATE BLOG POST URL]",
+  "description": "A directive that uses ng-transclude to create collapsible blocks. Read more about it on https://ngmilk.rocks/2015/09/18/angular-collapsible-directive-using-ng-transclude/",
   "keywords": [
     "angular",
     "angularjs",

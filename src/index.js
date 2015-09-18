@@ -17,8 +17,8 @@ function collapsibleBlock(){
   function collapsibleLink(scope, element, attrs){
     scope.collapsed = true;
     scope.title = attrs.collapsibleTitle;
-    scope.collapsedIcon = attrs.collapsedIcon
-    scope.expandedIcon = attrs.expandedIcon
+    scope.collapsedIcon = attrs.collapsedIcon;
+    scope.expandedIcon = attrs.expandedIcon;
 
     scope.toggle = function collapsibleToggle(e){
       e.preventDefault();
@@ -35,11 +35,10 @@ function collapsibleBlock(){
                 <a href="#" class="clps__title" ng-click="toggle($event)">
                   <i class="{{collapsedIcon}}" ng-if="collapsedIcon && collapsed"></i>
                   <i class="{{expandedIcon}}" ng-if="expandedIcon && !collapsed"></i>
-
-                  <span translate>{{title}}</span>
+                  <span>{{title}}</span>
                 </a>
 
-                <ng-transclude class="clps__content" ng-show="!collapsed"></ng-transclude>
+                <section ng-transclude class="clps__content" ng-show="!collapsed"></section>
               </section>',
     link: collapsibleLink
   }
