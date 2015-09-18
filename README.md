@@ -1,5 +1,5 @@
 # Angular collapsible block / ng-transclude demo
-![Angular collapsible block](https://ngmilk.rocks/content/images/2015/09/rbP_Th.gif)
+![Angular collapsible block](https://ngmilk.rocks/content/images/2015/09/6SpdDQ.gif)
 
 
 ### [Quick Demo](http://ng-milk.github.io/angular-collapsible-block-directive/)
