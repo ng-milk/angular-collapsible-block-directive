@@ -16,7 +16,7 @@
   <!-- Just some body style to space things up -->
   <style>
     body{
-      padding:120px 60px;
+      padding: 120px 60px;
 
       /* So much gradient, check out -> http://uigradients.com */
       background: -webkit-linear-gradient(90deg, #ECE9E6 10%, #FFFFFF 90%); /* Chrome 10+, Saf5.1+ */
@@ -25,18 +25,31 @@
       background:      -o-linear-gradient(90deg, #ECE9E6 10%, #FFFFFF 90%); /* Opera 11.10+ */
       background:         linear-gradient(90deg, #ECE9E6 10%, #FFFFFF 90%); /* W3C */
     }
+
+    h1{
+      font-size:1.6em;
+      font-weight: 300;
+      margin-bottom:30px;
+    }
+
+    footer{
+      margin-top:30px;
+      padding-top: 15px;
+      border-top: 1px solid #E6E6E6;
+    }
   </style>
 </head>
   <body class="clearfix" ng-app="app" ng-controller="ctrl">
-    <article class="col-xs-12 col-md-3">
-      <!-- dummy content -->
+    <header class="col-xs-12">
+      <h1>Angular collapsible block demo</h1>
+    </header>
+
+    <article class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
       <div class="form-group">
         <label for="exampleInputName">Name</label>
         <input type="text" class="form-control" id="exampleInputName" placeholder="Name">
       </div>
-      <!-- end dummy content -->
 
-      <!-- directive usage -->
       <collapsible collapsible-title="{{title1}}" collapsed-icon="fa fa-chevron-down" expanded-icon="fa fa-chevron-up">
         <section>
           <div class="form-group">
@@ -46,9 +59,7 @@
           </div>
         </section>
       </collapsible>
-      <!-- end directive usage -->
 
-      <!-- more dummy content -->
       <div class="form-group">
         <label for="exampleInputEmail">Email address</label>
         <input type="email" class="form-control" id="exampleInputEmail" placeholder="Email">
@@ -57,13 +68,10 @@
         <label for="exampleInputPassword">Password</label>
         <input type="password" class="form-control" id="exampleInputPassword" placeholder="Password">
       </div>
-      <!-- end dummy content -->
 
-      <!-- directive usage (again) -->
       <collapsible collapsible-title="{{title2}}" collapsed-icon="fa fa-chevron-down" expanded-icon="fa fa-chevron-up">
         <section class="form-inline">
           <div class="form-group">
-            <label class="sr-only" for="exampleInputAmount">Amount (in dollars)</label>
             <div class="input-group">
               <div class="input-group-addon">$</div>
               <input type="text" class="form-control" id="exampleInputAmount" placeholder="Amount">
@@ -73,8 +81,12 @@
           </div>
         </section>
       </collapsible>
-      <!-- end directive usage -->
     </article>
+
+    <footer class="col-xs-12">
+      <a class="btn btn-primary" href="https://github.com/ng-milk/angular-collapsible-block-directive"><i class="fa fa-code-fork"></i> Fork on Github</a>
+      <a class="btn btn-default" href="https://github.com/ng-milk/angular-collapsible-block-directive/issues"><i class="fa fa-bug"></i> Submit an issue</a>
+    </footer>
 
 
     <!-- Local JS -->

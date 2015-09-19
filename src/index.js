@@ -21,6 +21,7 @@ function collapsibleBlock(){
     scope.expandedIcon = attrs.expandedIcon;
 
     scope.toggle = function collapsibleToggle(e){
+      // Prevent anchor navigation.
       e.preventDefault();
       scope.collapsed = !scope.collapsed;
     };
