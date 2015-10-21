@@ -39,18 +39,18 @@
 
 .clps__content.ng-hide-add {
   opacity: 1;
-  animation: .2s fadeOut
+  animation: .2s fadeOutUp
 }
 
 .clps__content.ng-hide-remove {
   opacity: 1;
-  animation: .2s fadeInUp
+  animation: .2s fadeInDown
 }
 
-@keyframes fadeInUp {
+@keyframes fadeInDown {
   0% {
     opacity: 0;
-    bottom: -10px
+    bottom: 10px;
   }
   100% {
     opacity: 1;
@@ -58,13 +58,13 @@
   }
 }
 
-@keyframes fadeOut {
+@keyframes fadeOutUp {
   0% {
     opacity: 1;
     bottom: 0
   }
   100% {
     opacity: 0;
-    bottom: -10px
+    bottom: 10px;
   }
 }
