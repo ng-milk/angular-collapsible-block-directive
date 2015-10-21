@@ -22,6 +22,28 @@ gulp.task('scripts', function () {
     .pipe(gulp.dest(options.dist));
 });
 
+gulp.task('bundle_scripts', function() {
+  return gulp.src([
+    'node_modules/angular/angular.min.js',
+    'node_modules/angular-animate/angular-animate.min.js'])
+    .pipe(gulp.dest(options.dist));
+});
+
+gulp.task('bundle_styles', function() {
+  return gulp.src([
+    'node_modules/bootstrap-css-only/css/bootstrap.css',
+    'node_modules/font-awesome/css/font-awesome.css'])
+    .pipe(minifyCss({compatibility:'ie8'}))
+    .pipe(gulp.dest(options.dist));
+});
+
+gulp.task('bundle_fonts', function() {
+  return gulp.src([
+    'node_modules/font-awesome/fonts/*'])
+    .pipe(gulp.dest("fonts"));
+});
+
+
 gulp.task('styles', function(){
   return gulp.src([options.src + '/**/*.css'])
     .pipe(autoprefixer({
@@ -41,4 +63,4 @@ gulp.task('watch', function () {
 });
 
 gulp.task('default', gulpsync.sync([['build'], ['watch']]));
-gulp.task('build', gulpsync.sync([['clean'], ['scripts', 'styles']]));
+gulp.task('build', gulpsync.sync([['clean'], ['scripts', 'styles', 'bundle_scripts', 'bundle_styles', 'bundle_fonts']]));
